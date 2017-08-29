@@ -9,27 +9,33 @@ This is docker image of Ubuntu with ssh server enabled. You can run the docker c
       
       chmod 0400 id_rsa
       
+      
 - Build docker image with following command. Don't miss the "." at the end
       
       docker build -t ubuntuwithsshexample .
+      
       
 - After docker image has been created, run following command to run docker container. Option "-d" says run in background (demon mode) and "-p 2222:22" maps hosts port 2222 to containers port 22
       
       docker run -d -p 2222:22 ubuntuwithsshexample
       
+      
 - Now you can ssh-into the running container with following command
       
       ssh -p 2222 -i id_rsa root@localhost
+      
       
 ## Stop docker container
 - Find container id with following command
       
       docker ps
       
+      
 - Copy container id and run following commands with the container id
       
       docker stop [container id]
       docker rm [container id]
+      
       
 ## Extending this docker image
 - This docker image can be extended by adding other docker commands on the docker file 
