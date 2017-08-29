@@ -1,1 +1,1 @@
-FROM ubuntuwithssh:1.0.1
+FROM devkhadka/ubuntuwithssh:1.0.1
