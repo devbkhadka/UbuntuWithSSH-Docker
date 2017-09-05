@@ -38,6 +38,7 @@ This is docker image of Ubuntu with ssh server enabled. You can run the docker c
       
       
 ## Extending this docker image
-- This docker image can be extended by adding other docker commands on the docker file 
-- For ssh to work you need to keep "/usr/sbin/sshd -D" line in "entrypoint.sh" file. Or you can change this line to "/usr/sbin/sshd" with out option "-D" run the sshd in background but you will need other long running command in the file for docker container to keep running.
+- You can extend this docker file by adding more docker commands in the docker file
+- If you need to run some commands when docker container is started, un-comment few lines on the "Dockerfile" as instructed in comment in the "Dockerfile"
+- For ssh to work you need to keep "/usr/sbin/sshd" line in "entrypoint.sh" file. You will need a long running command at the end of entrypoint.sh to prevent docker container from terminating.
 - You can add other commands you want to execute when docker is started on the entrypoint.sh file. The command usually would be starting some http server or starting you program.
